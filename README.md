@@ -1,7 +1,6 @@
 # Current Build Status
 
-Linux, OSX: [![Build
-Status](https://travis-ci.org/csdms/hydrotrend-recipe.svg?branch=master)](https://travis-ci.org/csdms-stack/sedflux-recipe)
+Linux, OSX: [![Build Status](https://travis-ci.org/csdms-stack/sedflux-recipe.svg?branch=master)](https://travis-ci.org/csdms-stack/sedflux-recipe)
 
 # About sedflux
 
