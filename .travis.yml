@@ -7,8 +7,15 @@ env:
   - THIS_PACKAGE=sedflux
   - TRAVIS_PYTHON_VERSION="2.7"
   - NUMPY_VERSION="1.9"
-  - secure: rxW1rnyfUsc7jS1opjLqGNgbsxTmxdDHgTazQBt66lKdwyrFHiFQzqwK+lu2mm3TvSSZY39TEegxRuLnNS7xY448h3fhrZhAQU7tsZRRwS9bsP4qo2E3kt5U8vRVYd9rsC/0Nesu6uy9mBpo22R8REWiYcAJhEaDIi44pcEApdfiskI5rtWkUkyct5LTco1YC7ADNisVWSt7OCp29ZvYOowsmvuXif40ZzlvFo4Nqt6tnYHzmGYIJJh4PGcCI4st8S1xzw9Fpwp8aJ5SlwlkykI6oRGdFwhGMiVXxS0kJ4x9jgz2TZWflQEAl1Y+R3zR7r2fhHLm0JpwvlJ7Gwaslz1FbVzShTz/bs18L89bDL5Q2sx9q0eyW1yu2/F3vgfFmzm3NcAoOZMoncPUd6NleZmYe/kmNvQk1wxnkRxxsIGa6b5Nj6ruJ0cfCWP842buur61rwJbvvKNZfx0isEJMxY2kb9Htx67HfvgbNXd0rMrQA0gCjTxzQ7esxwP4OzwBWSwp/+5/cvpodqGWGXwyB2I0vdiByKkNewDwidpvonCV5qj8Q0hIPMNo2QXsev5dQ5gc2fBnfaVqciWXOnOgvW8uBiUvqyfzlBbVSC2kHQgmfS+WZsz+tkdlc0kIriwj2V8TuEQnqbzKrswVGYwhtRr7L7MvfO6SHC27RPFLBQ=
+  - secure: ps+BkOGeDiR4rCOC1/qojcmn6gdl/HQRWH8fraNGhQ1POcAWNzqrnIRTgJuIPuNsYOuoGtNy+k2p8lTT+uQ13OXs1v9mSYH6Ui9HfBEpC/XGyuI7hKcCJOuR5g1vlP4ExDEVnYHEcUr1jiI4Yge6w8ajhOHjqT+aD9pjHXMPTGVEEbtVYk4W4TYL6bIMiufUFwBITbIHfRtykK3Jkc0xGPd0C+aL6kyHXb7gwLGkSmEKMC99ygleYZ+dox38SnqE0RyOA+/GRyxuU8M7iYaaGmPJa9OtcUzTGfwyygu3++RIgFL7FkCDhsZLFrn4yRl/Jh7aFJ5lYa9YUuavbMjSHlzlSKs8XNgT14tT0oTmC58p0JtvwpUvvu7vt17DW+d/DLJmEhD9wbZCdNm0Ida5Bmw8hAXcnBeCl+vipxsdryOIjvbFLeW/NxU3oqPt4Wmz2NDLjlC7c+fUpllUSYze3ccAz6q8fFWbDgyemMP/cb+m0FMpx2rLZDVb0wucuYiSO+YiivnAx/XQFGFo7UnV93BN0EnfA/5ouicBWYh8cnbvdqTkntaHkX1ev6e6gyDaPGTsK6F5n8QhBV584RNW2fHaqft7VRlUQSrEIvVU/Ey6xEQnqrPL6Y8Skh2zTiEPJtXRXqExMMb/whWIc2plbo5ft+1Fo3KBKqFaN9sDxVU=
 sudo: false
+before_install:
+- |
+  if [[ $TRAVIS_OS_NAME == "osx" ]]; then
+    brew remove --force $(brew list)
+    brew cleanup -s
+    rm -rf $(brew --cache)
+  fi
 install:
 - bash ci/travis/install_python.sh $HOME/miniconda
 - export PATH="$HOME/miniconda/bin:$PATH"
