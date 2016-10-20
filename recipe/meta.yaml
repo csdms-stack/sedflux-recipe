@@ -1,6 +1,5 @@
 {% set name = "sedflux" %}
 {% set version = "2.1.2" %}
-{% set build_string = environ.get('GIT_BUILD_STR', '') %}
 
 package:
   name: {{ name }}
@@ -14,18 +13,17 @@ requirements:
     - cmake
     - gcc # [not win]
     - pkgconfig-command [osx]
-    - glib [osx]
+    - glib [unix]
   run:
     - libgcc
-    - glib [osx]
+    - glib [unix]
 
 test:
   commands:
     - sedflux -h
 
 build:
-  number: 0
-  # string: {{ build_string }}
+  number: 1
 
 about:
   home: https://github.com/mcflugen/sedflux
