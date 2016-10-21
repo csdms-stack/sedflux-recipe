@@ -11,14 +11,14 @@ source:
 requirements:
   build:
     - cmake
-    - gcc # [not win]
+    - gcc [osx]
     - pkgconfig-command [osx]
-    - glib [unix]
-    - libiconv [unix]
+    - glib [osx]
+    - libiconv [osx]
   run:
-    - libgcc
-    - glib [unix]
-    - libiconv [unix]
+    - libgcc [osx]
+    - glib [osx]
+    - libiconv [osx]
 
 test:
   commands:
