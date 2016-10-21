@@ -14,9 +14,11 @@ requirements:
     - gcc # [not win]
     - pkgconfig-command [osx]
     - glib [unix]
+    - libiconv [unix]
   run:
     - libgcc
     - glib [unix]
+    - libiconv [unix]
 
 test:
   commands:
