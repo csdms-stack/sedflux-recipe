@@ -1,31 +1,31 @@
 {% set name = "sedflux" %}
-{% set version = "2.1.1" %}
-{% set build_string = environ.get('GIT_BUILD_STR', '') %}
+{% set version = "2.1.2" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/mcflugen/{{ name }}
-  git_branch: add-function-pointers
+  url: https://github.com/mcflugen/{{ name }}/archive/v{{ version }}.tar.gz
 
 requirements:
   build:
     - cmake
-    - gcc # [not win]
+    - gcc [osx]
     - pkg-config [osx]
     - glib [osx]
+    - libiconv [osx]
   run:
-    - libgcc
+    - libgcc [osx]
     - glib [osx]
+    - libiconv [osx]
 
 test:
   commands:
     - sedflux -h
 
 build:
-  string: {{ build_string }}
+  number: 1
 
 about:
   home: https://github.com/mcflugen/sedflux
