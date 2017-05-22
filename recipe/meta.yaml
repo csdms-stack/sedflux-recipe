@@ -26,7 +26,7 @@ test:
     - sedflux -h
 
 build:
-  number: 2
+  number: 3
 
 about:
   home: https://github.com/mcflugen/sedflux
