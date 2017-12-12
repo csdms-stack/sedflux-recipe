@@ -12,9 +12,10 @@ source:
 requirements:
   build:
     - cmake
-    - gcc [osx]
+    - clangxx_osx-64 [osx]
+    - gxx_linux-64 [linux]
     - pkg-config [osx]
-    - glib [osx]
+    - glib
     - libiconv [osx]
   run:
     - libgcc [osx]
@@ -26,7 +27,7 @@ test:
     - sedflux -h
 
 build:
-  number: 3
+  number: 4
 
 about:
   home: https://github.com/mcflugen/sedflux
