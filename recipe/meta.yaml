@@ -12,16 +12,25 @@ source:
   sha256: 1a734ffbf9d654035db60abd95adcefed9537048d57ee542bd97300a77b1e7f5
 
 requirements:
+  # build:
+  #   - cmake
+  #   - {{ compiler('c') }}
+  #   - pkg-config [osx]
+  #   - glib
+  #   - libiconv [osx]
+  # run:
+  #   - libgcc [osx]
+  #   - glib
+  #   - libiconv [osx]
   build:
     - cmake
-    - {{ compiler('c') }}
+    - gcc # [not win]
+    - isl 0.12.2 # [not win]
     - pkg-config [osx]
-    - glib
-    - libiconv [osx]
+    - glib [osx]
   run:
-    - libgcc [osx]
-    - glib
-    - libiconv [osx]
+    - libgcc
+    - glib [osx]
 
 test:
   commands:
