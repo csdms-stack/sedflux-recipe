@@ -16,11 +16,11 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - pkg-config [osx]
-    - glib [osx]
+    - glib
     - libiconv [osx]
   run:
     - libgcc [osx]
-    - glib [osx]
+    - glib
     - libiconv [osx]
 
 test:
