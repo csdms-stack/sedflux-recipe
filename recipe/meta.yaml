@@ -1,5 +1,6 @@
 {% set name = "sedflux" %}
 {% set version = "2.2" %}
+{% set build = "0" %}
 
 package:
   name: {{ name }}
@@ -28,7 +29,7 @@ test:
     - sedflux -h
 
 build:
-  number: 5
+  number: {{ build }}
 
 about:
   home: https://github.com/mcflugen/sedflux
