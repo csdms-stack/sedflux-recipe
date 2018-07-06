@@ -1,6 +1,7 @@
 language: generic
 os:
 - osx
+- linux
 env:
   global:
   - CONDA_PREFIX=$HOME/miniconda
@@ -28,7 +29,8 @@ install:
 - hash -r
 - conda config --set always_yes yes --set changeps1 no
 - conda clean --all
-- conda install python=$TRAVIS_PYTHON_VERSION
+- conda create -n _build python=$TRAVIS_PYTHON_VERSION
+- source activate _build
 - conda install -q conda-build anaconda-client coverage sphinx
 script:
 - conda build ./recipe -c csdms-stack -c defaults -c conda-forge --old-build-string
