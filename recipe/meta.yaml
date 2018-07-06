@@ -1,13 +1,14 @@
 {% set name = "sedflux" %}
-{% set version = "2.1.2" %}
+{% set version = "2.2" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/mcflugen/{{ name }}
-  git_branch: add-function-pointers
+  url: https://github.com/mcflugen/{{ name }}/archive/v{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.tar.gz
+  sha256: 1a734ffbf9d654035db60abd95adcefed9537048d57ee542bd97300a77b1e7f5
 
 requirements:
   build:
