@@ -14,10 +14,9 @@ source:
 requirements:
   build:
     - cmake
-    - clangxx_osx-64 [osx]
-    - gxx_linux-64 [linux]
+    - {{ compiler('c') }}
     - pkg-config [osx]
-    - glib
+    - glib [osx]
     - libiconv [osx]
   run:
     - libgcc [osx]
